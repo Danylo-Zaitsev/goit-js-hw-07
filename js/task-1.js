@@ -1,10 +1,17 @@
-const quantity = document.querySelectorAll('.item');
-console.log('Кількість категорій:', quantity.length);
+const categoriesList = document.querySelectorAll(".categories-item");
+const elementsOfCategory = document.querySelectorAll(
+  ".elements-list > .elem-list-items"
+);
 
-quantity.forEach((quant) => {
-  const title = quant.querySelector('h2').textContent;
-  const lengthCategory = quant.querySelectorAll('ul li').length;
+console.log(`Number of categories: ${categoriesList.length}`);
 
-  console.log(`"Категорія:", ${title}`);
-  console.log(`"Кількість елементів:", ${lengthCategory}`);
+categoriesList.forEach((category) => {
+  const nameOfCategory = category.querySelector(".item-title").textContent;
+
+  const elementsOfCategory = category.querySelectorAll(
+    ".elements-list > .elem-list-items"
+  ).length;
+
+  console.log(`Category: ${nameOfCategory}`);
+  console.log(`Elements: ${elementsOfCategory}`);
 });
